@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# **Time Log Application ⏱**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A time log application using React that will allow users to track their time spent on various tasks. This application utilizes the local storage for storing data's received from the users and implemented some React hooks such as useState and useEffect.
 
-## Available Scripts
+## To _Run_ the Application
 
-In the project directory, you can run:
+To run the application, simply launch the terminal and enter ``npm start``.
 
-### `npm start`
+```
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application then will be displayed in the selected browser either edge or chrome.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features Implemented
 
-### `npm test`
+### A Time Log Entry.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users may enter the task particulars which includes task name, start time, end time, and a date. The task particulars can be enterd inside the textboxes right above the _Add New_ button.
 
-### `npm run build`
+<div align="center">
+    <img src="src/Img/inputBox.png" alt="input box"  width="500" height="100"/>
+    <p>Input Boxes</p>
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Delete a Time Log Entry.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The delete button will appear on each row of the table alongside the data provided in a table, allowing the users to be able to _delete_ the log added to the list by row.
+The delete button works as deleting data in a row.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<div align="center">
+    <img src="src/Img/deleteBtn.png" alt="delete btn"  width="200" height="100"/>
+    <p>Delete Button</p>
+</div>
 
-### `npm run eject`
+### Display the Time Logs.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The time log added by the users will be displayed in the format of a table right bellow the submit button. It will display all the data entered by user together with a duration and a delete button.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div align="center">
+    <img src="src/Img/table.png" alt="log table"/>
+<p>Time Log List Table</p>
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Duration for Each Task.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The users need to enter the task start time and their end time for it to calculate the total duration in minutes.
 
-## Learn More
+```
+    const diff = (end - start) / 1000 / 60;
+```
+<p align="center">Part of code to calculate the duration and convert it to minutes.</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Challenges Faced
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Encountered several issues and challenges along the way to complete the application as :
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Issues with storing an array in local storage.
+- The need of stringify to store the data in the local storage.
+- Figuring out to map an array.
+- Issues in displaying log list due to capitalization inconsistency.
+- Issue with the delete button functionality.
+- To get familiarized with a different CSS library.
+- Making the label sits on top of the textbox.
+- To write the README file upon completing the application.
