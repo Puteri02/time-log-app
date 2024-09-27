@@ -34,7 +34,8 @@ const App = () => {
       <br/><br/>
       <h1 style={{ textAlign: 'center', color: '#1E0342' }}>Time-Log Application</h1>
       <br/>
-      <AddTimeLogForm addTimeLog={addTimeLog} /> {/* Add time log */} <br/>
+      <AddTimeLogForm addTimeLog={addTimeLog} /> {/* Add time log */} 
+      <br/>
       <TimeLogList timeLogs={timeLog} deleteTimeLog={deleteTimeLog} /> {/* Pass timeLogs and deleteTimeLog */}
     </div>
   )
