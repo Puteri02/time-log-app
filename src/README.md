@@ -61,4 +61,5 @@ Encountered several issues and challenges along the way to complete the applicat
 - Issues in displaying log list due to capitalization inconsistency.
 - Issue with the delete button functionality.
 - To get familiarized with a different CSS library.
+- Making the label sits on top of the textbox.
 - To write the README file upon completing the application.
