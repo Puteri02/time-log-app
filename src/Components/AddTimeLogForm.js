@@ -7,10 +7,10 @@ function AddTimeLogForm({ addTimeLog }) {
   const [startTime, setStartTime] = useState(""); // For the start time
   const [endTime, setEndTime] = useState(""); // For the end time
   const [date, setDate] = useState(""); // For the date
-
+  
   // Handle form submission
   function handleSubmit(e) {
-    e.preventDefault(); // Stop the form from refreshing before submission
+    //e.preventDefault(); // Stop the form from refreshing before submission
 
     // Create Date objects for start and end times
     const start = new Date(`1970-01-01T${startTime}:00`); // Format of YYYY-MM-DD
@@ -45,6 +45,7 @@ function AddTimeLogForm({ addTimeLog }) {
     setEndTime(""); // Clear end time input
     setDate(""); // Clear date input
   }
+
 
   return (
     <form onSubmit={handleSubmit} class="text-center mt-3">
@@ -104,6 +105,9 @@ function AddTimeLogForm({ addTimeLog }) {
                     value={date}
                     onChange={(e) => setDate(e.target.value)} // Update task state on change
                     required
+
+                    max={new Date().toISOString().split('T')[0]} // Convert date to string, display date
+                    //max = "2024-10-03" //Put the max date
                   />
           </span>
       </div>
