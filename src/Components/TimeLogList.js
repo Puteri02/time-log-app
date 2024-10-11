@@ -17,8 +17,7 @@ const TimeLogList = ({ timeLogs, deleteTimeLog }) => {
         <Column field="endTime" header="End Time" sortable style={{ width: '20%', textAlign: 'center'}} />
         <Column field="date" header="Date" sortable style={{ width: '20%', textAlign: 'center'}} />
         <Column field="duration" header="Duration" sortable style={{ width: '20%', textAlign: 'center' }} />
-        <Column
-          body={(rowData) => (
+        <Column body={(rowData) => (
             // Delete button
             <TimeLogItem log={rowData} deleteTimeLog={deleteTimeLog} />
           )}
