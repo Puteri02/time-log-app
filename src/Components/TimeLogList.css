@@ -1,0 +1,11 @@
+.p-datatable .p-column-header-content {
+    justify-content: center;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    text-align: center;
+}
+
+.p-datatable .p-datatable-thead > tr > th  {
+    background-color: #FDDE55;
+}
