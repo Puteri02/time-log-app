@@ -1,49 +1,59 @@
 // Shows log entry with a delete button
-import React, { useRef } from "react";
+import React from "react";
 import { Button } from "primereact/button";
-import { confirmDialog } from 'primereact/confirmdialog'; // To use confirmDialog method
 
-const TimeLogItem = ({ log, deleteTimeLog }) => {
+const TimeLogItem = ({ log, handleDelete}) => {
   // Confirm dialog
-  const toast = useRef(null);
+  // const toast = useRef(null);
 
-  const accept = () => {
-    toast.current.show({ severity: 'error', summary: 'Yes', detail: 'You have deleted the log!', life: 2500 });
-    deleteTimeLog(log.id); // Call the delete function
-  }
+  // const accept = () => {
+  //   deleteTimeLog(log.id); // Call the delete function
+  //   toast.current.show({
+  //     severity: "success", summary: "Deleted", detail: "The selected log have been deleted!", life: 2500 });
+  // };
 
-  const reject = () => {
-    toast.current.show({ severity: 'info', summary: 'Cancel', detail: 'You have rejected to delete.', life: 2500 });
-  }
-
-  const handleDelete = () => {
-      confirmDialog({
-            message: 'Do you want to delete this time log?',
-            header: 'Delete Confirmation',
-            icon: 'pi pi-info-circle',
-            acceptClassName: 'p-button-danger',
-            accept, // Call yes
-            reject // Call no
-        });
-    };
-
-  // Display alert before delete the log
+  // const reject = () => {
+  //   toast.current.show({
+  //     severity: "info", summary: "Canceled", detail: "The log is not deleted.", life: 2500 });
+  // };
+  // toast / confirm dialog
   // const handleDelete = () => {
-  //   alert(`Log entry for "${log.task}" has been deleted.`);
-  //   deleteTimeLog(log.id);
+  //   confirmDialog({
+  //     message: "Do you want to delete this time log?",
+  //     header: "Delete Confirmation",
+  //     icon: "pi pi-info-circle",
+  //     acceptClassName: "p-button-danger",
+  //     accept: accept(log), // yes
+  //     reject, // no
+  //   });
+  // };
+
+  //   const handleConfirm = () => {
+  //     console.log("Confirm dialog triggered");
   // };
 
   return (
-    <tr className="surface-50 shadow-5">
-      <td>
-        {/* Delete button */}
-        <Button onClick = {handleDelete(log.id)}
-         icon="pi pi-times"
-          label="Delete"
-          className="p-button-danger p-button-outlined">
-        </Button>
-      </td>
-    </tr>
+    <div>
+      <table>
+        <tbody>
+          <tr className="surface-50 shadow-5">
+            <td>
+              <Button
+                onClick = {() => handleDelete(log)}
+                icon="pi pi-times"
+                label="Delete"
+                className="p-button-danger p-button-outlined p-button-sm custom-button"
+                style={{
+                  border: "0.5px solid red",
+                  borderRadius: "5px",
+                  padding: "5px",
+                }}
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

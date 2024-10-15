@@ -5,7 +5,6 @@ import AddTimeLogForm from "./Components/AddTimeLogForm";
 import TimeLogList from "./Components/TimeLogList";
 import { Card } from 'primereact/card';
  
-
 const App = () => {
 
   const [timeLog, setTimeLog] = useState(
@@ -40,7 +39,7 @@ const App = () => {
       <Card title="Time-Log Application" 
         style={{textAlign: "center", 
                 color: "whitesmoke", 
-                backgroundColor: "#88AB8E",
+                backgroundColor: "#03AED2",
                 paddingTop: "2em",
                 paddingBelow: "2em"}}
       />

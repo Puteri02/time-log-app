@@ -85,12 +85,12 @@ function AddTimeLogForm({ addTimeLog }) {
     <form onSubmit={handleSubmit} className="text-center mt-3">
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         {/* Input for task */}
-        <span style={{marginLeft: "10em", marginRight: "4em"}}>
+        <span style={{marginLeft: "9vw", marginRight: "4vw"}}>
           <label
             style={{
               display:"block", 
               textAlign:'left', 
-              paddingBottom: '1em', 
+              paddingBottom: '0.8vw', 
               fontFamily: 'cursive'
             }}>
             Task name 🔎
@@ -102,12 +102,12 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for Start Time */}
-        <span style={{marginRight: "6em"}}>
+        <span style={{marginRight: "4vw"}}>
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "1em",
+              paddingBottom: "0.8vw",
               fontFamily: "cursive",
             }}
           >
@@ -128,12 +128,12 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for End Time */}
-        <span style={{marginRight: "6em"}}>
+        <span style={{marginRight: "4vw"}}>
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "1em",
+              paddingBottom: "0.8vw",
               fontFamily: "cursive",
             }}
           >
@@ -151,12 +151,12 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for Date */}
-        <span style={{ marginRight: "10em" }}>
+        <span style={{ marginRight: "9vw" }}>
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "1em",
+              paddingBottom: "0.8vw",
               fontFamily: "cursive",
             }}>
             Date 📅
@@ -169,14 +169,12 @@ function AddTimeLogForm({ addTimeLog }) {
               maxDate={maxDate}
               readOnlyInput
               required
-              //panelStyle={{ height: "280px", width: "280px" }}
-              //maxDate={new Date().toISOString().split('T')[0]}
             />
         </span>
       </div>
       {/* Add Task button */}
       <button
-        style={{ fontFamily: "cursive" }}
+        style={{ fontFamily: "cursive", width: '30vw' }}
         className ="text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-1 p-1 hover:bg-green-700 cursor-pointer"
         type="submit"
         onClick={(e) => {
@@ -197,4 +195,4 @@ function AddTimeLogForm({ addTimeLog }) {
   );
 }
 
-export default AddTimeLogForm
+export default AddTimeLogForm;

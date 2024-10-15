@@ -4,8 +4,16 @@
 
 .p-datatable .p-datatable-tbody > tr > td {
     text-align: center;
+    border-left: 1px solid rgb(249, 248, 248);
+    border-right: 1px solid rgb(249, 248, 248);
 }
 
 .p-datatable .p-datatable-thead > tr > th  {
     background-color: #FDDE55;
+}
+
+
+.custom-button:hover {
+    background-color: red;
+    color: azure;
 }
