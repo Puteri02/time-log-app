@@ -13,7 +13,35 @@
 }
 
 
-.custom-button:hover {
+.delete-button:hover {
     background-color: red;
     color: azure;
 }
+
+.pi-search:before {
+    margin-left: 0;
+}
+
+
+.p-datatable .p-datatable-header {
+    background: #FEF9F2;
+    border: none;
+}
+
+.p-datatable .p-paginator-bottom {
+    background-color: #FEF9F2;
+}
+
+
+  
+/* Small devices */
+@media screen and (max-width: 576px) {
+    
+}
+
+/* Medium devices*/
+@media screen and (max-width: 768px) {
+
+ }
+
+ 

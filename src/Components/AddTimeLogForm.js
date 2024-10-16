@@ -17,7 +17,7 @@ function AddTimeLogForm({ addTimeLog }) {
   const showSuccess = () => {
     toast.current.show({
       severity: "success",
-      summary: "Success Message",
+      summary: "Success 😀",
       detail: "Time Log successfully added!",
       life: 2500,
     });
@@ -26,7 +26,7 @@ function AddTimeLogForm({ addTimeLog }) {
   const showError = () => {
     toast.current.show({
       severity: "error",
-      summary: "Error Message",
+      summary: "Error 😡",
       detail: "Please fill up all the data needed!",
       life: 2500,
     });
@@ -83,15 +83,15 @@ function AddTimeLogForm({ addTimeLog }) {
 
   return (
     <form onSubmit={handleSubmit} className="text-center mt-3">
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ display: "flex", justifyContent: "space-around"}} className="input_boxes">
         {/* Input for task */}
-        <span style={{marginLeft: "9vw", marginRight: "4vw"}}>
+        <span style={{marginLeft: "7vw", marginRight: "4vw"}}>
           <label
             style={{
               display:"block", 
               textAlign:'left', 
               paddingBottom: '0.8vw', 
-              fontFamily: 'cursive'
+              // fontFamily: 'cursive'
             }}>
             Task name 🔎
           </label>
@@ -108,7 +108,7 @@ function AddTimeLogForm({ addTimeLog }) {
               display: "block",
               textAlign: "left",
               paddingBottom: "0.8vw",
-              fontFamily: "cursive",
+              // fontFamily: "cursive",
             }}
           >
             Start Time <span>⏳</span>
@@ -134,7 +134,7 @@ function AddTimeLogForm({ addTimeLog }) {
               display: "block",
               textAlign: "left",
               paddingBottom: "0.8vw",
-              fontFamily: "cursive",
+              // fontFamily: "cursive",
             }}
           >
             End Time ⌛
@@ -151,13 +151,13 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for Date */}
-        <span style={{ marginRight: "9vw" }}>
+        <span style={{ marginRight: "4vw" }}>
           <label
             style={{
               display: "block",
               textAlign: "left",
               paddingBottom: "0.8vw",
-              fontFamily: "cursive",
+              // fontFamily: "cursive",
             }}>
             Date 📅
           </label>
@@ -174,7 +174,7 @@ function AddTimeLogForm({ addTimeLog }) {
       </div>
       {/* Add Task button */}
       <button
-        style={{ fontFamily: "cursive", width: '30vw' }}
+        style={{ width: '20vw', height: '5vw' }}
         className ="text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-1 p-1 hover:bg-green-700 cursor-pointer"
         type="submit"
         onClick={(e) => {
