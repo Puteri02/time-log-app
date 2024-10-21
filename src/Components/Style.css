@@ -1,15 +1,25 @@
+.p-card .p-card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
 .p-datatable .p-column-header-content {
     justify-content: center;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
     text-align: center;
-    border-left: 1px solid rgb(249, 248, 248);
-    border-right: 1px solid rgb(249, 248, 248);
+    border: 1px solid ghostwhite;
 }
 
 .p-datatable .p-datatable-thead > tr > th  {
     background-color: #FDDE55;
+}
+
+.p-icon-field-left > .p-inputtext {
+    padding-left: 2.5rem;
+    width: 22vw;
 }
 
 
@@ -22,26 +32,23 @@
     margin-left: 0;
 }
 
+element.style {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
 
 .p-datatable .p-datatable-header {
     background: #FEF9F2;
     border: none;
+    padding-bottom: 1.5em;
 }
 
 .p-datatable .p-paginator-bottom {
     background-color: #FEF9F2;
 }
-
-
-  
-/* Small devices */
-@media screen and (max-width: 576px) {
-    
-}
-
-/* Medium devices*/
-@media screen and (max-width: 768px) {
-
- }
-
- 

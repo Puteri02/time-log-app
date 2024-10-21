@@ -49,8 +49,8 @@ function AddTimeLogForm({ addTimeLog }) {
   function handleSubmit(e) {
     e.preventDefault(); // Stop the form from refreshing before submission
     // Create Date objects for start and end times
-    const start = startTime.toLocaleTimeString()
-    const end = endTime.toLocaleTimeString()
+    const start = startTime.toLocaleTimeString();
+    const end = endTime.toLocaleTimeString();
     const diff = (endTime - startTime) / 1000 / 60; // To convert ms to mn
 
     // Create a new log object with the form data
@@ -83,99 +83,114 @@ function AddTimeLogForm({ addTimeLog }) {
 
   return (
     <form onSubmit={handleSubmit} className="text-center mt-3">
-      <div style={{ display: "flex", justifyContent: "space-around"}} className="input_boxes">
+      {/* <div className="flex-container" style={{ display: "flex", justifyContent: "space-around"}}> */}
+      <div className="grid pl-6 pr-6">
         {/* Input for task */}
-        <span style={{marginLeft: "7vw", marginRight: "4vw"}}>
-          <label
-            style={{
-              display:"block", 
-              textAlign:'left', 
-              paddingBottom: '0.8vw', 
-              // fontFamily: 'cursive'
-            }}>
-            Task name 🔎
-          </label>
-          <InputText
-              value={task}
-              onChange={(e) => setTask(e.target.value)}
-              required/>
-        </span>
-
-        {/* Input for Start Time */}
-        <span style={{marginRight: "4vw"}}>
+        {/* <span className="col-3" style={{marginLeft: "7vw", marginRight: "4vw"}}> */}
+        <span className="col-12 md:col-6 lg:col-3 ">
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "0.8vw",
-              // fontFamily: "cursive",
+              paddingBottom: "0.8em",
+            }}
+          >
+            Task 🔎
+          </label>
+          <InputText
+            className="w-full"
+            //style={{width: '19vw'}}
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            required
+            placeholder="Enter task name ..."
+          />
+        </span>
+
+        {/* Input for Start Time */}
+        {/* <span className="col-3" style={{marginRight: "4vw"}}> */}
+        <span className="col-12 md:col-6 lg:col-3">
+          <label
+            style={{
+              display: "block",
+              textAlign: "left",
+              paddingBottom: "0.8em",
             }}
           >
             Start Time <span>⏳</span>
           </label>
           <Calendar
-              id="time12"
-              type="time"
-              value={startTime}
-              onChange={(e) => {
-                console.log(e)
-                setStartTime(e.target.value);
-              }}
-              timeOnly
-              hourFormat="12"
-              required
-            />
+            className="w-full"
+            // id="time12"
+            type="time"
+            value={startTime}
+            onChange={(e) => {
+              console.log(e);
+              setStartTime(e.target.value);
+            }}
+            timeOnly
+            hourFormat="12"
+            required
+            placeholder="Select start time ..."
+          />
         </span>
 
         {/* Input for End Time */}
-        <span style={{marginRight: "4vw"}}>
+        {/* <span className="col-3" style={{marginRight: "4vw"}}> */}
+        <span className="col-12 md:col-6 lg:col-3">
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "0.8vw",
-              // fontFamily: "cursive",
+              paddingBottom: "0.8em",
             }}
           >
             End Time ⌛
           </label>
           <Calendar
-              id="time12"
-              value={endTime}
-              type="time"
-              onChange={(e) => setEndTime(e.target.value)}
-              timeOnly
-              hourFormat="12"
-              required
-            />
+            id="time12"
+            className="w-full"
+            value={endTime}
+            type="time"
+            onChange={(e) => setEndTime(e.target.value)}
+            timeOnly
+            hourFormat="12"
+            required
+            placeholder="Select end time ..."
+          />
         </span>
 
         {/* Input for Date */}
-        <span style={{ marginRight: "4vw" }}>
+        <span className="col-12 md:col-6 lg:col-3">
+          {/* <span className="col-3" style={{ marginRight: "4vw" }}> */}
           <label
             style={{
               display: "block",
               textAlign: "left",
-              paddingBottom: "0.8vw",
-              // fontFamily: "cursive",
-            }}>
+              paddingBottom: "0.8em",
+            }}
+          >
             Date 📅
           </label>
           <Calendar
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-              minDate={minDate}
-              maxDate={maxDate}
-              readOnlyInput
-              required
-            />
+            className="w-full"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            type="date"
+            minDate={minDate}
+            maxDate={maxDate}
+            readOnlyInput
+            required
+            placeholder="Select date ..."
+          />
         </span>
       </div>
+
       {/* Add Task button */}
+      <div className="grid pl-6 pr-6" style={{justifyContent: 'center'}}>
       <button
-        style={{ width: '20vw', height: '5vw' }}
-        className ="text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-1 p-1 hover:bg-green-700 cursor-pointer"
+        // style={{ width: '20vw', height: '8vh'}}
+        className="col-12 md:col-7 lg:col-4 text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-2 p-2 hover:bg-green-700 cursor-pointer"
         type="submit"
         onClick={(e) => {
           e.preventDefault();
@@ -185,9 +200,11 @@ function AddTimeLogForm({ addTimeLog }) {
             showSuccess();
             handleSubmit(e);
           }
-        }}>
+        }}
+      >
         Add New
       </button>
+      </div>
       <div className="card flex justify-content-center">
         <Toast ref={toast} />
       </div>

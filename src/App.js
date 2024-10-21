@@ -37,14 +37,9 @@ const App = () => {
   return (
     <div className="card">
       <Card title="Time-Log Application" 
-        style={{textAlign: "center", 
-                color: "whitesmoke", 
-                backgroundColor: "#03AED2",
-                paddingTop: "2em",
-                paddingBelow: "2em"}}
+        style={{textAlign: "center", color: "whitesmoke", backgroundColor: "#03AED2", paddingTop: "2em", paddingBelow: "2em"}}
       />
-      <br/>
-      <br/>
+      <br/> <br/>
       <AddTimeLogForm addTimeLog={addTimeLog} /> {/* Add time log */}
       <br />
       <TimeLogList timeLogs={timeLog} deleteTimeLog={deleteTimeLog} />{" "}
