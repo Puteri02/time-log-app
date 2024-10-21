@@ -4,8 +4,11 @@ import "./App.css";
 import AddTimeLogForm from "./Components/AddTimeLogForm";
 import TimeLogList from "./Components/TimeLogList";
 import { Card } from 'primereact/card';
- 
+
 const App = () => {
+
+  const version = process.env.REACT_APP_VERSION_INFO;  // .env
+  console.log("Version:", version); // Display in console
 
   const [timeLog, setTimeLog] = useState(
     localStorage.getItem("timeLogs") ? JSON.parse(localStorage.getItem("timeLogs")) : []
@@ -38,12 +41,18 @@ const App = () => {
     <div className="card">
       <Card title="Time-Log Application" 
         style={{textAlign: "center", color: "whitesmoke", backgroundColor: "#03AED2", paddingTop: "2em", paddingBelow: "2em"}}
-      />
-      <br/> <br/>
-      <AddTimeLogForm addTimeLog={addTimeLog} /> {/* Add time log */}
+      /> <br/> <br/>
+      {/* Add time log */}
+      <AddTimeLogForm addTimeLog={addTimeLog} />
       <br />
-      <TimeLogList timeLogs={timeLog} deleteTimeLog={deleteTimeLog} />{" "}
       {/* Pass timeLogs and deleteTimeLog */}
+      <TimeLogList timeLogs={timeLog} deleteTimeLog={deleteTimeLog} />{" "}
+      <br/>
+      {/* .env version */}
+      <footer style={{ textAlign: "center", backgroundColor: '#F8E8EE'}}>
+        <i>Version: {version}</i>
+      </footer>
+      <br/>
     </div>
   );
 };
