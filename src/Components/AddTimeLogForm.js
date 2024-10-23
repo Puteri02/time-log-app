@@ -33,17 +33,19 @@ function AddTimeLogForm({ addTimeLog }) {
   };
 
   let today = new Date();
-  let month = today.getMonth();
-  let year = today.getFullYear();
-  let prevMonth = month === 0 ? 11 : month - 1;
-  let prevYear = prevMonth === 11 ? year - 1 : year;
+  // let month = today.getMonth();
+  // let year = today.getFullYear();
+  // let prevMonth = month === 0 ? 11 : month - 1;
+  // let prevYear = prevMonth === 11 ? year - 1 : year;
 
   // PrimeReact date picker
   let minDate = new Date();
-  minDate.setMonth(prevMonth);
-  minDate.setFullYear(prevYear);
+  // minDate.setMonth(prevMonth);
+  // minDate.setFullYear(prevYear);
 
-  let maxDate = new Date(); // today is max
+  minDate.setDate(today.getDate() - 14); // Allow to pick date between 2 weeks from current date
+
+  let maxDate = new Date(); // Today is max
 
   // Handle form submission
   function handleSubmit(e) {
@@ -83,10 +85,8 @@ function AddTimeLogForm({ addTimeLog }) {
 
   return (
     <form onSubmit={handleSubmit} className="text-center mt-3">
-      {/* <div className="flex-container" style={{ display: "flex", justifyContent: "space-around"}}> */}
       <div className="grid pl-6 pr-6">
         {/* Input for task */}
-        {/* <span className="col-3" style={{marginLeft: "7vw", marginRight: "4vw"}}> */}
         <span className="col-12 md:col-6 lg:col-3 ">
           <label
             style={{
@@ -99,7 +99,6 @@ function AddTimeLogForm({ addTimeLog }) {
           </label>
           <InputText
             className="w-full"
-            //style={{width: '19vw'}}
             value={task}
             onChange={(e) => setTask(e.target.value)}
             required
@@ -108,7 +107,6 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for Start Time */}
-        {/* <span className="col-3" style={{marginRight: "4vw"}}> */}
         <span className="col-12 md:col-6 lg:col-3">
           <label
             style={{
@@ -136,7 +134,6 @@ function AddTimeLogForm({ addTimeLog }) {
         </span>
 
         {/* Input for End Time */}
-        {/* <span className="col-3" style={{marginRight: "4vw"}}> */}
         <span className="col-12 md:col-6 lg:col-3">
           <label
             style={{
@@ -162,7 +159,6 @@ function AddTimeLogForm({ addTimeLog }) {
 
         {/* Input for Date */}
         <span className="col-12 md:col-6 lg:col-3">
-          {/* <span className="col-3" style={{ marginRight: "4vw" }}> */}
           <label
             style={{
               display: "block",
@@ -181,29 +177,29 @@ function AddTimeLogForm({ addTimeLog }) {
             maxDate={maxDate}
             readOnlyInput
             required
-            placeholder="Select date ..."
+            placeholder="Pick a date ..."
           />
         </span>
       </div>
 
       {/* Add Task button */}
-      <div className="grid pl-6 pr-6" style={{justifyContent: 'center'}}>
-      <button
-        // style={{ width: '20vw', height: '8vh'}}
-        className="col-12 md:col-7 lg:col-4 text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-2 p-2 hover:bg-green-700 cursor-pointer"
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          if (!task || !startTime || !endTime || !date) {
-            showError();
-          } else {
-            showSuccess();
-            handleSubmit(e);
-          }
-        }}
-      >
-        Add New
-      </button>
+      <div className="grid pl-6 pr-6" style={{ justifyContent: "center" }}>
+        <button
+          className="col-12 md:col-7 lg:col-4 text-50 bg-green-500 border-none text-center mt-5 mb-5 text-lg border-round-lg w-2 p-2 hover:bg-green-700 cursor-pointer"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            if (!task || !startTime || !endTime || !date) {
+              showError();
+            } else {
+              showSuccess();
+              handleSubmit(e);
+            }
+          }}
+        >
+          {" "}
+          Add New
+        </button>
       </div>
       <div className="card flex justify-content-center">
         <Toast ref={toast} />

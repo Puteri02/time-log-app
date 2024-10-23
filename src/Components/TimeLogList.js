@@ -66,13 +66,16 @@ const TimeLogList = ({ timeLogs, deleteTimeLog }) => {
 
   const renderHeader = () => {
     return (
-      <div className="flex justify-content-end">
+      <div className="flex justify-content-end" >
         <IconField iconPosition="left">
           <InputIcon className="pi pi-search" />
           <InputText
             value={globalFilterValue}
             onChange={onGlobalFilterChange}
             placeholder="Search..."
+            // Hovering effect
+            tooltip="Search by Task name & Date"
+            tooltipOptions={{ position: "top"}}
           />
         </IconField>
       </div>

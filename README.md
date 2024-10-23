@@ -1,6 +1,6 @@
 # **Time Log Application ⏱**
 
-> A time log application using PrimeReact, allowing users to track their time spent on various tasks. In this updated version, several features are added in order to enhance the user experince as they use the app. Some of the features added is a search functionality. This application utilizes the local storage for storing data's received from the users and implemented some React hooks such as `useState` and `useEffect`.
+> A time log application using PrimeReact, allowing users to track their time spent on various tasks. This application utilizes the local storage for storing data's received from the users and implemented some React hooks such as `useState` and `useEffect`.
 
 ## To _Run_ the Application
 
@@ -65,6 +65,7 @@ The users need to enter the task start time and their end time for it to calcula
 - Each component can be imported individually.
 - Import path is available in the documentation of the corresponding component.
 <br>
+
     ```
   Example :
             import React from 'react'; 
@@ -80,6 +81,9 @@ The users need to enter the task start time and their end time for it to calcula
   ```      
 
 ### Updated Version
+
+In this updated version, several features were added in ways to enhance the user experience as the app is used. 
+<br>
 
 - App.js
   - Introduced a card component in order to have a more appealing and structured appearance.  
@@ -119,7 +123,7 @@ The users need to enter the task start time and their end time for it to calcula
         <img src="src/Img/deleteBtn1.png" style="width: 100px;">
     <p>Input box</p>
     </div>
-    - Applied a confirmation dialog along with a toast for deletion activity to avoid accidental deletion of logs.
+  - Applied a confirmation dialog along with a toast for deletion activity to avoid accidental deletion of logs.
     <div align="center">
         <img src="src/Img/confirmdialog1.png" style="width: 250px;">
     <p>Confirmation dialog</p>
@@ -184,9 +188,9 @@ Encountered several issues and challenges along the way to completing the applic
 
 - Getting familiarized with the PrimeReact and PrimeFlex library.
 - Difficulties in styling the delete button as it sits on a table.
-- Filtering not working for some letters as used in time (a, m, p)
+- Filtering doesn't work for some letters (a, m, p) as it is used in time declaration.
 - Adding a search function.
+- Resizing confirmation dialog using breakpoints.
 - Making the layout of the app to be responsive.
-- To write updates in Changelog.
+- Writing updates made in Changelog.
 - To write the software version in the .env file and display it at the application footer.
-- 
