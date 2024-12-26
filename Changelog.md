@@ -1,5 +1,6 @@
 # Changelog
-## v1.1.0.0
+
+## v1.1.0.0 [21 October 2024]
 
 - Introduced a card component to `app.js` for a more appealing and structured appearance.
 - Replaced the plain text box input together with add new button and delete button with PrimeReact components for a more interactive and better user interaction.
